@@ -90,7 +90,7 @@ app.delete('/usuario/:id', [verificaToken, verificaADM], (req, res) => {
 
     Usuario.findByIdAndUpdate(id, cambiaEstado, { new: true }, (err, usuarioDelete) => {
         if (err) {
-            return res.status(400).json({
+            return res.status(500).json({
                 ok: false,
                 err
             });
